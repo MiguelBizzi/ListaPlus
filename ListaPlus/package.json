@@ -9,12 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/roboto": "^0.2.3",
     "expo": "~48.0.15",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "postcss": "^8.4.23",
     "react": "18.2.0",
     "react-native": "0.71.7",
+    "react-native-responsive-fontsize": "^0.5.1",
+    "rn-iphone-helper": "^2.0.2",
     "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {
