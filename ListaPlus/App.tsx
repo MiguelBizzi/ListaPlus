@@ -30,7 +30,7 @@ export default function App() {
                 backgroundColor="transparent"
                 translucent
             />
-            {fontsLoaded ? <Cadastro /> : <Loading />}
+            {fontsLoaded ? <Login /> : <Loading />}
         </ThemeProvider>
     )
 }
