@@ -25,16 +25,19 @@ export const CloseIcon = styled(Feather)`
     color: ${({ theme }) => theme.colors.shape};
 `
 
-export const Content = styled.ScrollView`
-    flex: 1;
-
+export const ScrollViewComponent = styled.ScrollView`
     margin-top: -${RFValue(20)}px;
-    padding: ${RFValue(24)}px ${RFValue(36)}px;
 
     border-top-left-radius: ${RFValue(20)}px;
     border-top-right-radius: ${RFValue(20)}px;
 
     background-color: ${({ theme }) => theme.colors.shape};
+`
+
+export const Content = styled.View`
+    flex: 1;
+
+    padding: ${RFValue(24)}px ${RFValue(36)}px;
 `
 
 export const Title = styled.Text`
@@ -45,12 +48,11 @@ export const Title = styled.Text`
 
 export const InputGroup = styled.View`
     flex: 1;
-
-    margin-top: ${RFValue(24)}px;
+    margin-top: ${RFValue(16)}px;
 `
 
 export const Button = styled.TouchableOpacity`
-    margin-top: ${RFValue(10)}px;
+    margin-top: ${RFValue(5)}px;
     padding: ${RFValue(10)}px ${RFValue(24)}px;
 
     justify-content: center;

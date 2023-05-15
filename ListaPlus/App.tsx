@@ -13,6 +13,7 @@ import {
     useFonts,
 } from '@expo-google-fonts/roboto'
 import Loading from '@components/Loading'
+import Cadastro from '@screens/Cadastro'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -29,7 +30,7 @@ export default function App() {
                 backgroundColor="transparent"
                 translucent
             />
-            {fontsLoaded ? <Start /> : <Loading />}
+            {fontsLoaded ? <Cadastro /> : <Loading />}
         </ThemeProvider>
     )
 }
