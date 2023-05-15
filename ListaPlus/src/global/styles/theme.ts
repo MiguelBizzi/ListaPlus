@@ -20,6 +20,7 @@ export default {
         gray_light: 'rgba(234,234,234, 0.5)',
 
         green: '#658255',
+        outline_color: '#86988c',
 
         shape: '#ffffff',
 
