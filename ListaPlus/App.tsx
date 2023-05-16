@@ -1,8 +1,6 @@
-import Login from '@screens/Login'
 import React from 'react'
 import theme from './src/global/styles/theme'
 import { ThemeProvider } from 'styled-components'
-import Start from '@screens/Start'
 import { StatusBar } from 'react-native'
 
 import {
@@ -15,6 +13,9 @@ import {
 import Loading from '@components/Loading'
 import { AuthRoutes } from '@routes/auth.routes'
 import { NavigationContainer } from '@react-navigation/native'
+import CriaLista from '@screens/CriaLista'
+import ListasAbertas from '@screens/ListasAbertas'
+import Historico from '@screens/Historico'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -32,7 +33,7 @@ export default function App() {
                     backgroundColor="transparent"
                     translucent
                 />
-                {fontsLoaded ? <AuthRoutes /> : <Loading />}
+                {fontsLoaded ? <Historico /> : <Loading />}
             </ThemeProvider>
         </NavigationContainer>
     )

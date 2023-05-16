@@ -70,7 +70,6 @@ const Login: React.FC = () => {
                 <CloseButton onPress={handleGoBack}>
                     <CloseIcon name="arrow-left" />
                 </CloseButton>
-                {/* <Image /> */}
             </ImageContainer>
 
             <Content showsVerticalScrollIndicator={false}>
