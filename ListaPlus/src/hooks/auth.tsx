@@ -30,7 +30,6 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
 
     async function signIn(authUser: IUser) {
         try {
-            setIsLoadingUserStorageData(true)
             let users = await storageGetUsers()
 
             if (!users) return false
@@ -42,30 +41,27 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
                 ) {
                     setUser(selected_user)
                     await storageUserSave(selected_user)
+
                     Toast.show({
                         type: 'success',
                         text1: 'Sucesso!',
                         text2: 'Login feito com sucesso!',
                     })
+
                     return true
                 }
             })
         } catch (error) {
             console.log(error)
-        } finally {
-            setIsLoadingUserStorageData(false)
         }
     }
 
     async function signOut() {
         try {
-            setIsLoadingUserStorageData(true)
-
             setUser(null)
             await storageUserRemove()
         } catch (error) {
-        } finally {
-            setIsLoadingUserStorageData(false)
+            console.log(error)
         }
     }
 
@@ -86,11 +82,14 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
 
             const userLogged = await storageUserGet()
 
-            if (userLogged) {
-                setUser(userLogged)
+            if (Object.keys(userLogged).length == 0 || !userLogged) {
+                setUser(null)
+                return
             }
+
+            setUser(userLogged)
         } catch (error) {
-            throw error
+            console.log(error)
         } finally {
             setIsLoadingUserStorageData(false)
         }

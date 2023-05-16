@@ -128,6 +128,7 @@ const Cadastro: React.FC = () => {
                             iconName="mail"
                             keyboardType="email-address"
                             returnKeyType="next"
+                            autoCapitalize="none"
                             placeholder="Digite seu e-mail"
                             onSubmitEditing={() => {
                                 formRef.current?.getFieldRef('senha').focus()

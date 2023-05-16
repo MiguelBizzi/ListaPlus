@@ -58,9 +58,6 @@ const Login: React.FC = () => {
                 formRef.current.setFieldError('email', 'Email inválido!')
                 formRef.current.setFieldError('senha', 'Senha inválida!')
             }
-
-            // Validation passed
-            console.log(data)
         } catch (err) {
             if (err instanceof Yup.ValidationError) {
                 const errorMessages: { [key: string]: string } = {}
@@ -105,6 +102,7 @@ const Login: React.FC = () => {
                         label="E-mail"
                         iconName="mail"
                         keyboardType="email-address"
+                        autoCapitalize="none"
                         returnKeyType="next"
                         placeholder="Digite seu e-mail"
                         onSubmitEditing={() => {
@@ -116,6 +114,7 @@ const Login: React.FC = () => {
                         name="senha"
                         label="Senha"
                         iconName="eye"
+                        autoCapitalize="none"
                         isPassword
                         placeholder="Digite sua senha"
                         returnKeyType="done"
