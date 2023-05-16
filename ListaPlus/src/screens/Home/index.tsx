@@ -18,9 +18,12 @@ import {
 import HomeButton from '@components/HomeButton'
 import { useNavigation } from '@react-navigation/native'
 import { AppNavigatorRoutesProps } from '@routes/app.routes'
+import { useAuth } from '@hooks/auth'
+import { Toast } from 'react-native-toast-message/lib/src/Toast'
 
 const Home: React.FC = () => {
     const { navigate } = useNavigation<AppNavigatorRoutesProps>()
+    const { user, signOut } = useAuth()
 
     function handleGoToNewList() {
         navigate('new_list')
@@ -34,15 +37,24 @@ const Home: React.FC = () => {
         navigate('historic')
     }
 
+    async function handleSignOut() {
+        await signOut()
+        Toast.show({
+            type: 'success',
+            text1: 'Sucesso!',
+            text2: 'Deslogado com sucesso!',
+        })
+    }
+
     return (
         <Container>
             <Header>
-                <CloseButton>
+                <CloseButton onPress={handleSignOut}>
                     <CloseIcon name="exit-to-app" />
                 </CloseButton>
             </Header>
             <MainContent>
-                <Title>Seja bem vindo, nome</Title>
+                <Title>Seja bem vindo, {user.nome}</Title>
 
                 <ButtonsContainer>
                     <HomeButton

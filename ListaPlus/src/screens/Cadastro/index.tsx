@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 import {
     Container,
@@ -15,20 +15,30 @@ import {
     CadastrarText,
 } from './styles'
 
-import { TouchableOpacity } from 'react-native'
+import { ActivityIndicator, TouchableOpacity } from 'react-native'
 import * as Yup from 'yup'
 import Input from '@components/Input'
 import { Form } from '@unform/mobile'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { useNavigation } from '@react-navigation/native'
 import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
+import { useAuth } from '@hooks/auth'
+import { IUser } from '@dtos/IUser'
+import { useTheme } from 'styled-components/native'
+import { Toast } from 'react-native-toast-message/lib/src/Toast'
 
 const Cadastro: React.FC = () => {
-    const formRef = useRef<any>(null)
-    const navigation = useNavigation<AuthNavigatorRoutesProps>()
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    async function handleSubmit(data: any) {
+    const formRef = useRef<any>(null)
+    const theme = useTheme()
+    const navigation = useNavigation<AuthNavigatorRoutesProps>()
+    const { registerUser } = useAuth()
+
+    async function handleSubmit(data: IUser) {
         try {
+            setIsLoading(true)
+
             formRef.current.setErrors({})
 
             const schema = Yup.object().shape({
@@ -42,8 +52,23 @@ const Cadastro: React.FC = () => {
             await schema.validate(data, {
                 abortEarly: false,
             })
-            // Validation passed
-            console.log(data)
+
+            const response = await registerUser(data)
+
+            if (response) {
+                Toast.show({
+                    type: 'success',
+                    text1: 'Sucesso!',
+                    text2: 'Usuario cadastrado!',
+                })
+                navigation.goBack()
+            } else {
+                Toast.show({
+                    type: 'error',
+                    text1: 'Error!',
+                    text2: 'Não foi possivel cadastrar o usuario, tente novamente!',
+                })
+            }
         } catch (err) {
             if (err instanceof Yup.ValidationError) {
                 const errorMessages: { [key: string]: string } = {}
@@ -54,6 +79,8 @@ const Cadastro: React.FC = () => {
 
                 formRef.current?.setErrors(errorMessages)
             }
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -121,10 +148,15 @@ const Cadastro: React.FC = () => {
                     </Form>
 
                     <Button
+                        disabled={isLoading}
                         activeOpacity={0.6}
                         onPress={() => formRef?.current?.submitForm()}
                     >
-                        <ButtonText>Cadastrar</ButtonText>
+                        {isLoading ? (
+                            <ActivityIndicator color={theme?.colors.shape} />
+                        ) : (
+                            <ButtonText>Cadastrar</ButtonText>
+                        )}
                     </Button>
 
                     <Row>

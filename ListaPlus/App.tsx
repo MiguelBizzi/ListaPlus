@@ -11,9 +11,9 @@ import {
     useFonts,
 } from '@expo-google-fonts/roboto'
 import Loading from '@components/Loading'
-import { AuthRoutes } from '@routes/auth.routes'
-import { NavigationContainer } from '@react-navigation/native'
-import { AppRoutes } from '@routes/app.routes'
+import { AuthProvider } from '@hooks/auth'
+import { Toast } from 'react-native-toast-message/lib/src/Toast'
+import { Routes } from '@routes/index'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -24,15 +24,16 @@ export default function App() {
     })
 
     return (
-        <NavigationContainer>
-            <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+            <AuthProvider>
                 <StatusBar
                     barStyle="dark-content"
                     backgroundColor="transparent"
                     translucent
                 />
-                {fontsLoaded ? <AppRoutes /> : <Loading />}
-            </ThemeProvider>
-        </NavigationContainer>
+                {fontsLoaded ? <Routes /> : <Loading />}
+            </AuthProvider>
+            <Toast />
+        </ThemeProvider>
     )
 }

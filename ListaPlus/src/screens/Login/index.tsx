@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 import {
     Container,
@@ -16,19 +16,29 @@ import {
 } from './styles'
 
 import * as Yup from 'yup'
-import { TouchableOpacity } from 'react-native'
+import { ActivityIndicator, TouchableOpacity } from 'react-native'
 import Input from '@components/Input'
 import { Form } from '@unform/mobile'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { useNavigation } from '@react-navigation/native'
 import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
+import { useAuth } from '@hooks/auth'
+import { IUser } from '@dtos/IUser'
+import { useTheme } from 'styled-components/native'
+import { Toast } from 'react-native-toast-message/lib/src/Toast'
 
 const Login: React.FC = () => {
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
     const formRef = useRef<any>(null)
     const navigation = useNavigation<AuthNavigatorRoutesProps>()
+    const theme = useTheme()
+    const { signIn } = useAuth()
 
-    async function handleSubmit(data: any) {
+    async function handleSubmit(data: IUser) {
         try {
+            setIsLoading(true)
+
             formRef.current.setErrors({})
 
             const schema = Yup.object().shape({
@@ -41,6 +51,14 @@ const Login: React.FC = () => {
             await schema.validate(data, {
                 abortEarly: false,
             })
+
+            const response = await signIn(data)
+
+            if (!response) {
+                formRef.current.setFieldError('email', 'Email inválido!')
+                formRef.current.setFieldError('senha', 'Senha inválida!')
+            }
+
             // Validation passed
             console.log(data)
         } catch (err) {
@@ -53,6 +71,8 @@ const Login: React.FC = () => {
 
                 formRef.current?.setErrors(errorMessages)
             }
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -106,10 +126,15 @@ const Login: React.FC = () => {
                 </Form>
 
                 <Button
+                    disabled={isLoading}
                     activeOpacity={0.6}
                     onPress={() => formRef?.current?.submitForm()}
                 >
-                    <ButtonText>Entrar</ButtonText>
+                    {isLoading ? (
+                        <ActivityIndicator color={theme?.colors.shape} />
+                    ) : (
+                        <ButtonText>Entrar</ButtonText>
+                    )}
                 </Button>
 
                 <Row>
