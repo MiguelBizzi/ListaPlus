@@ -1,6 +1,6 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import { styled } from 'styled-components/native'
-import { Feather } from '@expo/vector-icons'
+import { MaterialIcons } from '@expo/vector-icons'
 import { getTopInset } from 'rn-iphone-helper'
 
 export const Container = styled.View`
@@ -23,7 +23,7 @@ export const CloseButton = styled.TouchableOpacity`
     margin-left: -${RFValue(5)}px;
 `
 
-export const CloseIcon = styled(Feather)`
+export const CloseIcon = styled(MaterialIcons)`
     font-size: ${RFValue(26)}px;
     color: ${({ theme }) => theme.colors.shape};
 `

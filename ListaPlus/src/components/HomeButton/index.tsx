@@ -6,11 +6,12 @@ import { Container, Outline, Content, IconCircle, Icon, Title } from './styles'
 interface Props {
     title: string
     iconName: any
+    onPress: () => void
 }
 
-const HomeButton: React.FC<Props> = ({ title, iconName }) => {
+const HomeButton: React.FC<Props> = ({ title, iconName, onPress }) => {
     return (
-        <Container activeOpacity={0.7}>
+        <Container onPress={onPress} activeOpacity={0.7}>
             <Outline>
                 <Content>
                     <IconCircle>

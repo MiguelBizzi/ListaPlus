@@ -16,13 +16,29 @@ import {
     Description,
 } from './styles'
 import HomeButton from '@components/HomeButton'
+import { useNavigation } from '@react-navigation/native'
+import { AppNavigatorRoutesProps } from '@routes/app.routes'
 
 const Home: React.FC = () => {
+    const { navigate } = useNavigation<AppNavigatorRoutesProps>()
+
+    function handleGoToNewList() {
+        navigate('new_list')
+    }
+
+    function handleGoToOpenList() {
+        navigate('open_list')
+    }
+
+    function handleGoToHistoric() {
+        navigate('historic')
+    }
+
     return (
         <Container>
             <Header>
                 <CloseButton>
-                    <CloseIcon name="x" />
+                    <CloseIcon name="exit-to-app" />
                 </CloseButton>
             </Header>
             <MainContent>
@@ -30,14 +46,17 @@ const Home: React.FC = () => {
 
                 <ButtonsContainer>
                     <HomeButton
+                        onPress={handleGoToNewList}
                         iconName="plus-circle"
                         title="Criar minha lista de compras"
                     />
                     <HomeButton
+                        onPress={handleGoToOpenList}
                         iconName="shopping-bag"
                         title="Listas de compras existentes"
                     />
                     <HomeButton
+                        onPress={handleGoToHistoric}
                         iconName="heart"
                         title="Meu historico de compras"
                     />

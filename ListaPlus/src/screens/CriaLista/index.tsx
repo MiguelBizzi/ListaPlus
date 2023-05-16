@@ -22,15 +22,21 @@ import {
 import { useTheme } from 'styled-components/native'
 import SuggestCard from '@components/SuggestCard'
 import MyNewList from '@components/MyNewList'
+import { useNavigation } from '@react-navigation/native'
+import { AppNavigatorRoutesProps } from '@routes/app.routes'
 
 const CriaLista: React.FC = () => {
     const theme = useTheme()
+    const navigation = useNavigation<AppNavigatorRoutesProps>()
 
+    function handleGoBack() {
+        navigation.goBack()
+    }
     return (
         <Container>
             <Header>
                 <TopRow>
-                    <BackButton activeOpacity={0.6}>
+                    <BackButton onPress={handleGoBack} activeOpacity={0.6}>
                         <BackIcon name="arrow-left" />
                     </BackButton>
                     <Title>Minha lista:</Title>

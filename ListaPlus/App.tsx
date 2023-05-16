@@ -13,9 +13,7 @@ import {
 import Loading from '@components/Loading'
 import { AuthRoutes } from '@routes/auth.routes'
 import { NavigationContainer } from '@react-navigation/native'
-import CriaLista from '@screens/CriaLista'
-import ListasAbertas from '@screens/ListasAbertas'
-import Historico from '@screens/Historico'
+import { AppRoutes } from '@routes/app.routes'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -33,7 +31,7 @@ export default function App() {
                     backgroundColor="transparent"
                     translucent
                 />
-                {fontsLoaded ? <Historico /> : <Loading />}
+                {fontsLoaded ? <AppRoutes /> : <Loading />}
             </ThemeProvider>
         </NavigationContainer>
     )
