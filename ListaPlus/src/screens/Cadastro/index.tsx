@@ -20,9 +20,12 @@ import * as Yup from 'yup'
 import Input from '@components/Input'
 import { Form } from '@unform/mobile'
 import { RFValue } from 'react-native-responsive-fontsize'
+import { useNavigation } from '@react-navigation/native'
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
 
 const Cadastro: React.FC = () => {
     const formRef = useRef<any>(null)
+    const navigation = useNavigation<AuthNavigatorRoutesProps>()
 
     async function handleSubmit(data: any) {
         try {
@@ -54,11 +57,19 @@ const Cadastro: React.FC = () => {
         }
     }
 
+    function handleGoBack() {
+        navigation.goBack()
+    }
+
+    function handleGoToLogin() {
+        navigation.navigate('login')
+    }
+
     return (
         <Container>
             <ImageContainer>
-                <CloseButton>
-                    <CloseIcon name="x" />
+                <CloseButton onPress={handleGoBack}>
+                    <CloseIcon name="arrow-left" />
                 </CloseButton>
                 {/* <Image /> */}
             </ImageContainer>
@@ -120,7 +131,10 @@ const Cadastro: React.FC = () => {
                         <ForgotPasswordText>
                             Voce ja possui uma conta?
                         </ForgotPasswordText>
-                        <TouchableOpacity activeOpacity={0.4}>
+                        <TouchableOpacity
+                            onPress={handleGoToLogin}
+                            activeOpacity={0.4}
+                        >
                             <CadastrarText>Entre</CadastrarText>
                         </TouchableOpacity>
                     </Row>

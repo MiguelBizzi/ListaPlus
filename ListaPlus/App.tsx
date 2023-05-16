@@ -13,8 +13,8 @@ import {
     useFonts,
 } from '@expo-google-fonts/roboto'
 import Loading from '@components/Loading'
-import Cadastro from '@screens/Cadastro'
-import Home from '@screens/Home'
+import { AuthRoutes } from '@routes/auth.routes'
+import { NavigationContainer } from '@react-navigation/native'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -25,13 +25,15 @@ export default function App() {
     })
 
     return (
-        <ThemeProvider theme={theme}>
-            <StatusBar
-                barStyle="dark-content"
-                backgroundColor="transparent"
-                translucent
-            />
-            {fontsLoaded ? <Home /> : <Loading />}
-        </ThemeProvider>
+        <NavigationContainer>
+            <ThemeProvider theme={theme}>
+                <StatusBar
+                    barStyle="dark-content"
+                    backgroundColor="transparent"
+                    translucent
+                />
+                {fontsLoaded ? <AuthRoutes /> : <Loading />}
+            </ThemeProvider>
+        </NavigationContainer>
     )
 }

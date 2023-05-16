@@ -9,13 +9,21 @@ import {
     ImageContainer,
     ImageContainerTitle,
 } from './styles'
+import { useNavigation } from '@react-navigation/native'
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
 
 const Start: React.FC = () => {
+    const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+    function handleGoToLogin() {
+        navigation.navigate('login')
+    }
+
     return (
         <Container>
             <Content>
                 <Title>LISTA+</Title>
-                <StartButton activeOpacity={0.6}>
+                <StartButton onPress={handleGoToLogin} activeOpacity={0.6}>
                     <StartButtonText>Começar</StartButtonText>
                 </StartButton>
             </Content>

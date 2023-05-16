@@ -20,9 +20,12 @@ import { TouchableOpacity } from 'react-native'
 import Input from '@components/Input'
 import { Form } from '@unform/mobile'
 import { RFValue } from 'react-native-responsive-fontsize'
+import { useNavigation } from '@react-navigation/native'
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
 
 const Login: React.FC = () => {
     const formRef = useRef<any>(null)
+    const navigation = useNavigation<AuthNavigatorRoutesProps>()
 
     async function handleSubmit(data: any) {
         try {
@@ -53,11 +56,19 @@ const Login: React.FC = () => {
         }
     }
 
+    function handleGoBack() {
+        navigation.goBack()
+    }
+
+    function handleGoToCadastro() {
+        navigation.navigate('cadastro')
+    }
+
     return (
         <Container>
             <ImageContainer>
-                <CloseButton>
-                    <CloseIcon name="x" />
+                <CloseButton onPress={handleGoBack}>
+                    <CloseIcon name="arrow-left" />
                 </CloseButton>
                 {/* <Image /> */}
             </ImageContainer>
@@ -104,7 +115,10 @@ const Login: React.FC = () => {
 
                 <Row>
                     <ForgotPasswordText>Não possui conta?</ForgotPasswordText>
-                    <TouchableOpacity activeOpacity={0.4}>
+                    <TouchableOpacity
+                        onPress={handleGoToCadastro}
+                        activeOpacity={0.4}
+                    >
                         <CadastrarText>Cadastre-se</CadastrarText>
                     </TouchableOpacity>
                 </Row>
