@@ -1,7 +1,7 @@
 import { IAlimento } from './IAlimento'
 
 export interface IList {
-    id: string
+    id: any
     status: boolean
     alimentos: IAlimento[]
 }

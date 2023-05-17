@@ -1,16 +1,29 @@
 import ListCard from '@components/ListCard'
 import React from 'react'
-import { ScrollView, View } from 'react-native'
+import { FlatList, ScrollView, View } from 'react-native'
 
 import { Container, Header, CircleButton, Icon, Title } from './styles'
 import { useNavigation } from '@react-navigation/native'
 import { AppNavigatorRoutesProps } from '@routes/app.routes'
+import { IList } from '@dtos/IList'
+import EmptyFlatlistText from '@components/EmptyFlatlistText'
+import { useList } from '@hooks/list'
+import { Toast } from 'react-native-toast-message/lib/src/Toast'
 
 const Historico: React.FC = () => {
+    const { lists, deleteList } = useList()
     const navigation = useNavigation<AppNavigatorRoutesProps>()
 
     function handleGoBack() {
         navigation.goBack()
+    }
+
+    async function handleDeleteList(id: any) {
+        await deleteList(id)
+        Toast.show({
+            type: 'success',
+            text1: 'Lista excluida com sucesso!',
+        })
     }
 
     return (
@@ -21,11 +34,20 @@ const Historico: React.FC = () => {
                 </CircleButton>
                 <Title>Meu histórico de compras:</Title>
             </Header>
-            <ScrollView>
-                <ListCard isFinished />
-                <ListCard isFinished />
-                <ListCard isFinished />
-            </ScrollView>
+            <FlatList
+                data={lists.filter((list: IList) => list.status)}
+                keyExtractor={(item) => item?.id}
+                renderItem={({ item, index }) => (
+                    <ListCard
+                        handleDelete={(id) => handleDeleteList(id)}
+                        index={index + 1}
+                        list={item}
+                    />
+                )}
+                ListEmptyComponent={
+                    <EmptyFlatlistText text="Nenhuma historico!" />
+                }
+            />
         </Container>
     )
 }

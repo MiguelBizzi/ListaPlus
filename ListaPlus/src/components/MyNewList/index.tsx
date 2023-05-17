@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { FlatList, ScrollView, View } from 'react-native'
 
-import { Container, Header, Title, Icon, EmptyText } from './styles'
+import { Container, Header, Title, Icon } from './styles'
 import MyNewListCard from './MyNewListCard'
 import { RFValue } from 'react-native-responsive-fontsize'
+import EmptyFlatlistText from '@components/EmptyFlatlistText'
 
 interface Props {
     alimentos: any[]
@@ -32,7 +33,7 @@ const MyNewList: React.FC<Props> = ({ alimentos, handleMark }) => {
                 renderItem={({ item }) => (
                     <MyNewListCard onPress={handleMark} item={item} />
                 )}
-                ListEmptyComponent={<EmptyText>Lista vazia!</EmptyText>}
+                ListEmptyComponent={<EmptyFlatlistText text="Lista vazia!" />}
             />
         </Container>
     )

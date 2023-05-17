@@ -35,6 +35,7 @@ import { IAlimento } from '@dtos/IAlimento'
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
 import { useList } from '@hooks/list'
 import { IList } from '@dtos/IList'
+import moment from 'moment'
 
 const CriaLista: React.FC = () => {
     const [selectedAlimento, setSelectedAlimento] = useState<any[]>([])
@@ -129,7 +130,7 @@ const CriaLista: React.FC = () => {
         }
 
         let newList: IList = {
-            id: new Date().toString(),
+            id: moment(),
             status: false,
             alimentos: selectedAlimento,
         }

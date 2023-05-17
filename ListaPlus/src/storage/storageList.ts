@@ -23,6 +23,14 @@ export async function storageList(list: IList) {
     }
 }
 
+export async function storageLists(lists: IList[]) {
+    try {
+        await AsyncStorage.setItem(LISTS_STORAGE, JSON.stringify(lists))
+    } catch (error) {
+        console.log('Erro ao salvar as listas no AsyncStorage:', error)
+    }
+}
+
 export async function storageGetLists() {
     const storage = await AsyncStorage.getItem(LISTS_STORAGE)
 

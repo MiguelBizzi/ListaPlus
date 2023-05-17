@@ -5,15 +5,15 @@ import { Container, Name, InfoGroup, Units, CheckBoxIcon, Line } from './styles'
 
 interface Props {
     item: any
-    onPress: (id: number, isMarked: boolean) => void
+    onPress: (id: number, isMarked: boolean) => Promise<void>
 }
 
 const MyNewListCard: React.FC<Props> = ({ item, onPress }) => {
     const [isMarked, setIsMarked] = useState<boolean>(item?.isMarked)
 
-    function handleOnPress() {
+    async function handleOnPress() {
         setIsMarked((prev) => !prev)
-        onPress(item.id, !isMarked)
+        await onPress(item.id, !isMarked)
     }
 
     return (

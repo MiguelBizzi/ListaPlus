@@ -32,11 +32,3 @@ export const Icon = styled(Feather)`
     font-size: ${RFValue(16)}px;
     color: ${({ theme }) => theme.colors.text_dark};
 `
-export const EmptyText = styled.Text`
-    margin-top: ${RFValue(10)}px;
-    align-self: center;
-
-    font-family: ${({ theme }) => theme.fonts.light};
-    font-size: ${RFValue(14.5)}px;
-    color: ${({ theme }) => theme.colors.text};
-`

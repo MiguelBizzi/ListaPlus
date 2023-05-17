@@ -1,10 +1,22 @@
+import { IAlimento } from '@dtos/IAlimento'
 import { IList } from '@dtos/IList'
-import { storageGetLists, storageList } from '@storage/storageList'
+import {
+    storageGetLists,
+    storageList,
+    storageLists,
+} from '@storage/storageList'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
 interface ListContextProps {
     lists: any
     saveList: (list: IList) => Promise<void>
+    checkList: (id: any) => Promise<void>
+    deleteList: (id: any) => Promise<void>
+    markItem: (
+        id_lista: any,
+        id_alimento: number,
+        isMarked: boolean
+    ) => Promise<void>
 }
 
 type Props = {
@@ -25,6 +37,70 @@ const ListProvider: React.FC<Props> = ({ children }) => {
         }
     }
 
+    async function checkList(id: any) {
+        try {
+            const updatedLists = lists.map((list: IList) => {
+                if (list.id === id) {
+                    const updatedAlimentos = list.alimentos.map(
+                        (alimento: IAlimento) => {
+                            return { ...alimento, isMarked: true }
+                        }
+                    )
+
+                    return {
+                        ...list,
+                        status: true,
+                        alimentos: updatedAlimentos,
+                    }
+                }
+                return list
+            })
+
+            setLists(updatedLists)
+            await storageLists(updatedLists)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function deleteList(id: any) {
+        try {
+            const updatedLists = lists.filter((list: IList) => list.id !== id)
+
+            setLists(updatedLists)
+            await storageLists(updatedLists)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function markItem(
+        id_lista: any,
+        id_alimento: number,
+        isMarked: boolean
+    ) {
+        const updatedLists = lists.map((list: IList) => {
+            if (id_lista === list.id) {
+                const updatedAlimentos = list.alimentos.map(
+                    (alimento: IAlimento) => {
+                        if (id_alimento === alimento.id) {
+                            return { ...alimento, isMarked }
+                        }
+
+                        return alimento
+                    }
+                )
+
+                return { ...list, alimentos: updatedAlimentos }
+            }
+
+            return list
+        })
+
+        setLists(updatedLists)
+        await storageLists(updatedLists)
+    }
+
     async function loadListData() {
         try {
             const lists = await storageGetLists()
@@ -39,10 +115,10 @@ const ListProvider: React.FC<Props> = ({ children }) => {
         loadListData()
     }, [])
 
-    console.log(lists)
-
     return (
-        <ListContext.Provider value={{ lists, saveList }}>
+        <ListContext.Provider
+            value={{ lists, saveList, checkList, deleteList, markItem }}
+        >
             {children}
         </ListContext.Provider>
     )

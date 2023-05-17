@@ -1,6 +1,6 @@
 import MyNewList from '@components/MyNewList'
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { FlatList, View } from 'react-native'
 
 import {
     Container,
@@ -17,12 +17,28 @@ import {
     ListContainer,
 } from './styles'
 import MyNewListCard from '@components/MyNewList/MyNewListCard'
+import { IList } from '@dtos/IList'
+import moment from 'moment'
 
 interface Props {
-    isFinished?: boolean
+    list: IList
+    index: number
+    handleCheck?: (id: any) => Promise<void>
+    handleMark?: (
+        id_lista: any,
+        id_alimento: number,
+        isMarked: boolean
+    ) => Promise<void>
+    handleDelete: (id: any) => Promise<void>
 }
 
-const ListCard: React.FC<Props> = ({ isFinished = false }) => {
+const ListCard: React.FC<Props> = ({
+    list,
+    index,
+    handleCheck,
+    handleMark,
+    handleDelete,
+}) => {
     const [showContent, setShowContent] = useState<boolean>(false)
 
     return (
@@ -36,29 +52,48 @@ const ListCard: React.FC<Props> = ({ isFinished = false }) => {
                 </IconContainer>
                 <Info>
                     <View>
-                        <Title>Lista 1</Title>
-                        <Date>23/03/2023</Date>
+                        <Title>Lista {index}</Title>
+                        <Date>
+                            {moment(list.id)
+                                .utcOffset('-03:00')
+                                .format('DD/HH/YYYY HH:mm') + 'h'}
+                        </Date>
                     </View>
-                    <Status isFinished={isFinished}>
-                        {isFinished ? 'Finalizada ' : 'Aberta'}
+                    <Status isFinished={list.status}>
+                        {list.status ? 'Finalizada ' : 'Aberta'}
                     </Status>
                 </Info>
                 <ButtonsGroup>
-                    <Button activeOpacity={0.7}>
-                        <ButtonIcon name="check" />
-                    </Button>
-                    <Button activeOpacity={0.7}>
+                    {handleCheck && (
+                        <Button
+                            onPress={async () => await handleCheck(list.id)}
+                            activeOpacity={0.7}
+                        >
+                            <ButtonIcon name="check" />
+                        </Button>
+                    )}
+                    <Button
+                        onPress={async () => await handleDelete(list.id)}
+                        activeOpacity={0.7}
+                    >
                         <ButtonIcon name="trash" />
                     </Button>
                 </ButtonsGroup>
             </Header>
-            <ListContainer style={{ display: showContent ? 'flex' : 'none' }}>
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-            </ListContainer>
+            <FlatList
+                style={{ display: showContent ? 'flex' : 'none' }}
+                data={list.alimentos}
+                keyExtractor={(item) => String(item.id)}
+                renderItem={({ item }) => (
+                    <MyNewListCard
+                        onPress={async (id, isMarked) => {
+                            if (handleMark)
+                                await handleMark(list.id, id, isMarked)
+                        }}
+                        item={item}
+                    />
+                )}
+            />
         </Container>
     )
 }
