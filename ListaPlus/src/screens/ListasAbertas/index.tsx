@@ -55,14 +55,13 @@ const ListasAbertas: React.FC = () => {
             <FlatList
                 data={lists.filter((list: IList) => !list.status)}
                 keyExtractor={(item) => item?.id}
-                renderItem={({ item, index }) => (
+                renderItem={({ item }) => (
                     <ListCard
                         handleDelete={(id) => handleDeleteList(id)}
                         handleCheck={(id) => handleCheckList(id)}
                         handleMark={(id_lista, id_alimento, isMarked) =>
                             handleMarkAlimento(id_lista, id_alimento, isMarked)
                         }
-                        index={index + 1}
                         list={item}
                     />
                 )}

@@ -22,7 +22,6 @@ import moment from 'moment'
 
 interface Props {
     list: IList
-    index: number
     handleCheck?: (id: any) => Promise<void>
     handleMark?: (
         id_lista: any,
@@ -34,7 +33,6 @@ interface Props {
 
 const ListCard: React.FC<Props> = ({
     list,
-    index,
     handleCheck,
     handleMark,
     handleDelete,
@@ -52,9 +50,9 @@ const ListCard: React.FC<Props> = ({
                 </IconContainer>
                 <Info>
                     <View>
-                        <Title>Lista {index}</Title>
+                        <Title>Lista {list.id}</Title>
                         <Date>
-                            {moment(list.id)
+                            {moment(list.date)
                                 .utcOffset('-03:00')
                                 .format('DD/HH/YYYY HH:mm') + 'h'}
                         </Date>
@@ -86,10 +84,13 @@ const ListCard: React.FC<Props> = ({
                 keyExtractor={(item) => String(item.id)}
                 renderItem={({ item }) => (
                     <MyNewListCard
-                        onPress={async (id, isMarked) => {
-                            if (handleMark)
-                                await handleMark(list.id, id, isMarked)
-                        }}
+                        onPress={
+                            handleMark
+                                ? async (id, isMarked) => {
+                                      await handleMark(list.id, id, isMarked)
+                                  }
+                                : undefined
+                        }
                         item={item}
                     />
                 )}

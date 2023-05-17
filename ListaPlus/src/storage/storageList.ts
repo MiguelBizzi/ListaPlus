@@ -1,6 +1,6 @@
 import { IList } from '@dtos/IList'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { LISTS_STORAGE } from './storageConfig'
+import { ID_COUNTER, LISTS_STORAGE } from './storageConfig'
 
 export async function storageList(list: IList) {
     try {
@@ -28,6 +28,26 @@ export async function storageLists(lists: IList[]) {
         await AsyncStorage.setItem(LISTS_STORAGE, JSON.stringify(lists))
     } catch (error) {
         console.log('Erro ao salvar as listas no AsyncStorage:', error)
+    }
+}
+
+export async function storageGetNextId() {
+    try {
+        const currentId = await AsyncStorage.getItem(ID_COUNTER)
+
+        if (currentId !== null) {
+            const nextId = parseInt(currentId) + 1
+
+            await AsyncStorage.setItem(ID_COUNTER, nextId.toString())
+
+            return nextId
+        } else {
+            await AsyncStorage.setItem(ID_COUNTER, '1')
+
+            return 1
+        }
+    } catch (error) {
+        console.log('Erro ao obter ou atualizar o contador do ID:', error)
     }
 }
 

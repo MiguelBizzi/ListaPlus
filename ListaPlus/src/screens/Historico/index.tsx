@@ -37,10 +37,9 @@ const Historico: React.FC = () => {
             <FlatList
                 data={lists.filter((list: IList) => list.status)}
                 keyExtractor={(item) => item?.id}
-                renderItem={({ item, index }) => (
+                renderItem={({ item }) => (
                     <ListCard
                         handleDelete={(id) => handleDeleteList(id)}
-                        index={index + 1}
                         list={item}
                     />
                 )}
