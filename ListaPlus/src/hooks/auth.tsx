@@ -27,6 +27,7 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
     const [user, setUser] = useState<any>(null)
     const [isLoadingUserStorageData, setIsLoadingUserStorageData] =
         useState(true)
+    const [isFirstEntry, setIsFirstEntry] = useState(true)
 
     async function signIn(authUser: IUser) {
         try {
@@ -76,6 +77,22 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
         }
     }
 
+    async function registerInicialUser() {
+        try {
+            let newUser: IUser = {
+                nome: 'Tayna',
+                email: 'taynaseverino0@gmail.com',
+                senha: '123',
+            }
+
+            await storageUsersData(newUser)
+
+            if (isFirstEntry) setIsFirstEntry(false)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     async function loadUserData() {
         try {
             setIsLoadingUserStorageData(true)
@@ -97,6 +114,7 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
 
     useEffect(() => {
         loadUserData()
+        registerInicialUser()
     }, [])
 
     return (
