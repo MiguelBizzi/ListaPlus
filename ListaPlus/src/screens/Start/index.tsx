@@ -11,6 +11,7 @@ import {
 } from './styles'
 import { useNavigation } from '@react-navigation/native'
 import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
+import { Image } from 'react-native'
 
 const Start: React.FC = () => {
     const navigation = useNavigation<AuthNavigatorRoutesProps>()
@@ -27,12 +28,10 @@ const Start: React.FC = () => {
                     <StartButtonText>Começar</StartButtonText>
                 </StartButton>
             </Content>
-            <ImageContainer>
-                <ImageContainerTitle>
-                    Suas compras na palma da mão
-                </ImageContainerTitle>
-                {/* <Image /> */}
-            </ImageContainer>
+            <Image source={require('@assets/fundo.png')} style={{ flex: 1 }} />
+            <ImageContainerTitle>
+                Suas compras na palma da mão
+            </ImageContainerTitle>
         </Container>
     )
 }

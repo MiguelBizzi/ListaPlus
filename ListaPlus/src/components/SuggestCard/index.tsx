@@ -1,7 +1,14 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Image, View } from 'react-native'
 
-import { Container, Circle, PlusButton, PlusIcon, Label } from './styles'
+import {
+    Container,
+    Circle,
+    PlusButton,
+    PlusIcon,
+    Label,
+    AlimentoImage,
+} from './styles'
 
 interface Props {
     item: any
@@ -19,6 +26,9 @@ const SuggestCard: React.FC<Props> = ({ item, onPress }) => {
                 <PlusButton>
                     <PlusIcon name="plus-circle" />
                 </PlusButton>
+                {item?.imagem && (
+                    <AlimentoImage source={{ uri: item.imagem }} />
+                )}
             </Circle>
             <Label>{item?.nome}</Label>
         </Container>

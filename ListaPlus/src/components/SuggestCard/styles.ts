@@ -16,7 +16,17 @@ export const Circle = styled.TouchableOpacity`
 
     border-radius: ${RFValue(65 / 2)}px;
 
+    justify-content: center;
+    align-items: center;
+
     background-color: ${({ theme }) => theme.colors.shape};
+`
+
+export const AlimentoImage = styled.Image`
+    width: ${RFValue(50)}px;
+    height: ${RFValue(50)}px;
+
+    border-radius: ${RFValue(50 / 2)}px;
 `
 
 export const PlusButton = styled.View`

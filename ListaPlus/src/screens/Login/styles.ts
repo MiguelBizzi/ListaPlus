@@ -17,7 +17,10 @@ export const ImageContainer = styled.View`
 `
 
 export const CloseButton = styled.TouchableOpacity`
-    margin-left: ${RFValue(24)}px;
+    position: absolute;
+
+    top: ${getTopInset() + RFValue(10)}px;
+    left: ${RFValue(24)}px;
 `
 
 export const CloseIcon = styled(Feather)`

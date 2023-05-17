@@ -81,8 +81,18 @@ export const Circle = styled.View`
 
     margin-top: -${RFValue(100)}px;
 
+    justify-content: center;
+    align-items: center;
+
     border-radius: ${RFValue(70 / 2)}px;
     background-color: ${({ theme }) => theme.colors.shape};
+`
+
+export const PorquinhoImage = styled.Image`
+    width: ${RFValue(70)}px;
+    height: ${RFValue(70)}px;
+
+    border-radius: ${RFValue(70 / 2)}px;
 `
 
 export const FooterTitle = styled.Text`

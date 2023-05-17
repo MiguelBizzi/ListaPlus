@@ -2,231 +2,231 @@
     {
         "id": 1,
         "nome": "Abacate",
-        "imagem": "https://example.com/abacate.jpg"
+        "imagem": "https://d3ugyf2ht6aenh.cloudfront.net/stores/174/441/products/21-e75d390490c2c79b7915122895261424-1024-1024.webp"
     },
     {
         "id": 2,
         "nome": "Abacaxi",
-        "imagem": "https://example.com/abacaxi.jpg"
+        "imagem": "https://www.minicash.com.br/image/cache/catalog/img/produtos_2021/abacaxi-un-550x550.png"
     },
     {
         "id": 3,
         "nome": "Açaí",
-        "imagem": "https://example.com/acai.jpg"
+        "imagem": "https://images.tcdn.com.br/img/img_prod/924009/acai_15_1_fc724ee4ac41fe8dd19c0c1d6c3b0af0.jpg"
     },
     {
         "id": 4,
         "nome": "Acerola",
-        "imagem": "https://example.com/acerola.jpg"
+        "imagem": "https://tezeio.vtexassets.com/arquivos/ids/686513-800-800?v=638193057955670000&width=800&height=800&aspect=true"
     },
     {
         "id": 5,
         "nome": "Alface",
-        "imagem": "https://example.com/alface.jpg"
+        "imagem": "https://scfoods.fbitsstatic.net/img/p/alface-crespa-higienizada-500g-71095/257715.jpg?w=800&h=800&v=no-change&qs=ignore"
     },
     {
         "id": 6,
         "nome": "Alho",
-        "imagem": "https://example.com/alho.jpg"
+        "imagem": "https://tezeio.vtexassets.com/arquivos/ids/686462-800-800?v=638193057268300000&width=800&height=800&aspect=true"
     },
     {
         "id": 7,
         "nome": "Amendoim",
-        "imagem": "https://example.com/amendoim.jpg"
+        "imagem": "https://images.tcdn.com.br/img/img_prod/758670/amendoim_torrado_sem_sal_100g_109_1_20200514142306.jpg"
     },
     {
         "id": 8,
         "nome": "Arroz",
-        "imagem": "https://example.com/arroz.jpg"
+        "imagem": "https://propao.agilecdn.com.br/2504_1.jpg"
     },
     {
         "id": 9,
         "nome": "Banana",
-        "imagem": "https://example.com/banana.jpg"
+        "imagem": "https://ibassets.com.br/ib.item.image.big/b-2d8f770e7eaa41b58c8629b9b295a436.jpeg"
     },
     {
         "id": 10,
         "nome": "Batata",
-        "imagem": "https://example.com/batata.jpg"
+        "imagem": "https://t00987.vtexassets.com/arquivos/ids/158136/frente.jpg?v=637728281642330000"
     },
     {
         "id": 11,
         "nome": "Beterraba",
-        "imagem": "https://example.com/beterraba.jpg"
+        "imagem": "https://mercadoorganico.com/6580-large_default/beterraba-organica-500g-osm.jpg"
     },
     {
         "id": 12,
         "nome": "Caju",
-        "imagem": "https://example.com/caju.jpg"
+        "imagem": "https://hortifrutirecife.com.br/image/cache/catalog/produtos/CAJU-637x637.png"
     },
     {
         "id": 13,
         "nome": "Cenoura",
-        "imagem": "https://example.com/cenoura.jpg"
+        "imagem": "https://mercadoorganico.com/6443-large_default/cenoura-organica-500g-osm.jpg"
     },
     {
         "id": 14,
         "nome": "Coco",
-        "imagem": "https://example.com/coco.jpg"
+        "imagem": "https://media.cotabest.com.br/media/sku/coco-seco-por-kg-dois-cunhados-kg.jpg"
     },
     {
         "id": 15,
         "nome": "Couve",
-        "imagem": "https://example.com/couve.jpg"
+        "imagem": "https://s3-sa-east-1.amazonaws.com/bluesoft-erp/kacula/ecommerce/produtos/fotos/cb5264c3-e93d-45e7-baaa-01379b871e0c/foto_product.jpg"
     },
     {
         "id": 16,
         "nome": "Laranja",
-        "imagem": "https://example.com/laranja.jpg"
+        "imagem": "https://d3ugyf2ht6aenh.cloudfront.net/stores/746/397/products/laranja_ceu1-53852a66aa8037bd7415221636647098-640-0.webp"
     },
     {
         "id": 17,
         "nome": "Maçã",
-        "imagem": "https://example.com/maca.jpg"
+        "imagem": "https://media.istockphoto.com/id/185262648/pt/foto/ma%C3%A7%C3%A3-vermelha-com-folha-isolada-no-fundo-branco.jpg?s=612x612&w=0&k=20&c=dBFPnuC0qgN59Nv0l0_1K8972J46xPIuuWywgCC6a5Y="
     },
     {
         "id": 18,
         "nome": "Manga",
-        "imagem": "https://example.com/manga.jpg"
+        "imagem": "https://hiperideal.vteximg.com.br/arquivos/ids/167726/62332.jpg?v=636615816353730000"
     },
     {
         "id": 19,
         "nome": "Melancia",
-        "imagem": "https://example.com/melancia.jpg"
+        "imagem": "https://hiperideal.vteximg.com.br/arquivos/ids/167698/51470.jpg?v=636615816266230000"
     },
     {
         "id": 20,
         "nome": "Melão",
-        "imagem": "https://example.com/melao.jpg"
+        "imagem": "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/6510bf60175e9443f373de7c96877a52.jpg"
     },
     {
         "id": 21,
         "nome": "Milho",
-        "imagem": "https://example.com/milho.jpg"
+        "imagem": "https://nutrinews.com/wp-content/uploads/2020/10/milho-aves.jpg"
     },
     {
         "id": 22,
         "nome": "Pêra",
-        "imagem": "https://example.com/pera.jpg"
+        "imagem": "https://scfoods.fbitsstatic.net/img/p/pera-williams-unidade-70671/257173.jpg?w=800&h=800&v=no-change&qs=ignore"
     },
     {
         "id": 23,
         "nome": "Tomate",
-        "imagem": "https://example.com/tomate.jpg"
+        "imagem": "https://scfoods.fbitsstatic.net/img/p/tomate-debora-maduro-para-molho-500g-70892/257510.jpg?w=800&h=800&v=no-change&qs=ignore"
     },
     {
         "id": 24,
         "nome": "Uva",
-        "imagem": "https://example.com/uva.jpg"
+        "imagem": "https://www.proativaalimentos.com.br/image/cache/catalog/img_prod/uva[1]-1000x1000.jpg"
     },
     {
         "id": 25,
         "nome": "Açúcar",
-        "imagem": "https://i.imgur.com/8bwVWhf.jpg"
+        "imagem": "https://diaadiastore.vteximg.com.br/arquivos/ids/155511-1000-1000/Acucar-Uniao.jpg?v=636131654659730000"
     },
     {
         "id": 26,
         "nome": "Farinha de trigo",
-        "imagem": "https://i.imgur.com/0TXfzB8.jpg"
+        "imagem": "https://imageswscdn.wslojas.com.br/files/24534/farinha-de-trigo-integral-fina-5-kg-pacote-32-1.jpg"
     },
     {
         "id": 27,
         "nome": "Óleo de soja",
-        "imagem": "https://i.imgur.com/lbF3xVv.jpg"
+        "imagem": "https://diafoodservice.agilecdn.com.br/9575_1.jpg"
     },
     {
         "id": 28,
         "nome": "Sal",
-        "imagem": "https://i.imgur.com/55VUeX9.jpg"
+        "imagem": "https://armazemsaovito.fbitsstatic.net/img/p/sal-grosso-150534/347031.jpg?w=344&h=344&v=no-change&qs=ignore"
     },
     {
         "id": 29,
         "nome": "Café",
-        "imagem": "https://i.imgur.com/cnUdZJO.jpg"
+        "imagem": "https://img.freepik.com/fotos-gratis/graos-de-cafe-levitam-em-um-fundo-branco_485709-33.jpg?w=2000"
     },
     {
         "id": 30,
         "nome": "Leite",
-        "imagem": "https://i.imgur.com/Qkia5Am.jpg"
+        "imagem": "https://samsclub.vtexassets.com/arquivos/ids/157217/Manteiga-com-Sal-Itacolomy-500g.jpg?v=1769979502"
     },
     {
         "id": 31,
         "nome": "Manteiga",
-        "imagem": "https://i.imgur.com/KvF2Jr1.jpg"
+        "imagem": "https://hiperideal.vteximg.com.br/arquivos/ids/198688-1000-1000/200766.jpg?v=637890127954800000"
     },
     {
         "id": 32,
         "nome": "Queijo",
-        "imagem": "https://i.imgur.com/yN6bvgm.jpg"
+        "imagem": "http://d3ugyf2ht6aenh.cloudfront.net/stores/738/706/products/queijo-parmesao-premium-fracionado1-2be9dd2eed2968340f16451759677838-640-0.jpg"
     },
     {
         "id": 33,
         "nome": "Presunto",
-        "imagem": "https://i.imgur.com/COl82Zt.jpg"
+        "imagem": "https://s2.glbimg.com/Ze2q2gnPnzehbMklWmheFvSYOnY=/0x0:649x382/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/N/2/nCun6QSqaKHwTnIWlSig/fatias-de-presunto-istock-pixabay.jpg"
     },
     {
         "id": 34,
         "nome": "Ovos",
-        "imagem": "https://i.imgur.com/7Rb8MQv.jpg"
+        "imagem": "https://a-static.mlcdn.com.br/800x560/ovos-extra-branco-e-vermelho-caixa-c-12-cartelas-cada-ovos-portella/distribuidoraportela/a3bbdf0c38d411ecbc864201ac185033/13cddce5d14e7542847d3d5b85b9aad2.jpeg"
     },
     {
         "id": 35,
         "nome": "Iogurte",
-        "imagem": "https://i.imgur.com/XLlYfxF.jpg"
+        "imagem": "https://trimais.vteximg.com.br/arquivos/ids/1033117-1000-1000/foto_original.jpg?v=637850238438070000"
     },
     {
         "id": 36,
         "nome": "Cereal",
-        "imagem": "https://i.imgur.com/NM72wqu.jpg"
+        "imagem": "https://http2.mlstatic.com/D_NQ_NP_838132-MLU50940647874_072022-O.jpg"
     },
     {
         "id": 37,
         "nome": "Pão de forma",
-        "imagem": "https://i.imgur.com/jHto9OQ.jpg"
+        "imagem": "https://ibassets.com.br/ib.item.image.big/b-e95e2495b6b5497fb44e370e79f8698e.png"
     },
     {
         "id": 38,
         "nome": "Pão francês",
-        "imagem": "https://i.imgur.com/Im8lLsz.jpg"
+        "imagem": "https://comper.vteximg.com.br/arquivos/ids/192118-1000-1000/867535-pao-frances.jpg?v=637635206395630000"
     },
     {
         "id": 39,
         "nome": "Biscoito",
-        "imagem": "https://i.imgur.com/KzZ8uJ8.jpg"
+        "imagem": "https://www.drogariaminasbrasil.com.br/media/product/1b5/biscoito-rosquinha-sabor-leite-350g-aymore-e71.jpg"
     },
     {
         "id": 40,
         "nome": "Refrigerante",
-        "imagem": "https://i.imgur.com/4pr5B6d.jpg"
+        "imagem": "https://res.cloudinary.com/piramides/image/upload/c_fill,h_564,w_395/v1/products/13692-coca-zero-one-way-250ml-12un.20230427160531.png?_a=AAAOGGX"
     },
     {
         "id": 41,
         "nome": "Suco de caixinha",
-        "imagem": "https://i.imgur.com/4K7G2xS.jpg"
+        "imagem": "https://cdn.awsli.com.br/1957/1957771/produto/1047699118b0ce4df18.jpg"
     },
     {
         "id": 43,
         "nome": "Água mineral",
-        "imagem": "https://i.imgur.com/JJvOw7q.jpg"
+        "imagem": "https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/15905/medium/agua-mineral-crystal-sem-gas-15l_89543.png"
     },
     {
         "id": 44,
         "nome": "Cerveja",
-        "imagem": "https://i.imgur.com/sT20wtB.jpg"
+        "imagem": "https://tb1304.vtexassets.com/arquivos/ids/196953/Cerveja-imperio-puro-malte-lt-473ML.jpg?v=638089936293070000"
     },
     {
         "id": 45,
         "nome": "Vinho",
-        "imagem": "https://i.imgur.com/9McVWeH.jpg"
+        "imagem": "https://cdn.dooca.store/1390/products/an6kcu3f2ltlwsl4tpywfj6nmp2wqghvxrkn_450x600+fill_ffffff.png?v=1617904414&webp=0"
     },
     {
         "id": 46,
         "nome": "Cachaça",
-        "imagem": "https://i.imgur.com/FZhfvVq.jpg"
+        "imagem": "https://ibassets.com.br/ib.item.image.large/l-911d0d39047e409eb26add96dbf63a1c.jpeg"
     },
     {
         "id": 47,
         "nome": "Whisky",
-        "imagem": "https://i.imgur.com/xKmXO.jpg"
+        "imagem": "https://coopsp.vtexassets.com/arquivos/ids/215700/82184090442.jpg?v=637919529210070000"
     }
 ]

@@ -12,6 +12,7 @@ import {
     Footer,
     FooterHeader,
     Circle,
+    PorquinhoImage,
     FooterTitle,
     Description,
 } from './styles'
@@ -76,7 +77,14 @@ const Home: React.FC = () => {
             </MainContent>
             <Footer>
                 <FooterHeader>
-                    <Circle />
+                    <Circle>
+                        {/* <PorquinhoSvg /> */}
+                        <PorquinhoImage
+                            source={{
+                                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUeEnTc8SgR6ENPpYDpZUidBUN_Fy6uROfQIWwKeSYetvO75iW',
+                            }}
+                        />
+                    </Circle>
                     <FooterTitle>Voce sabia?</FooterTitle>
                 </FooterHeader>
                 <Description>

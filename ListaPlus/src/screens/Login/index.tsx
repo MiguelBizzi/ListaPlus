@@ -16,7 +16,7 @@ import {
 } from './styles'
 
 import * as Yup from 'yup'
-import { ActivityIndicator, TouchableOpacity } from 'react-native'
+import { ActivityIndicator, Image, TouchableOpacity } from 'react-native'
 import Input from '@components/Input'
 import { Form } from '@unform/mobile'
 import { RFValue } from 'react-native-responsive-fontsize'
@@ -25,7 +25,9 @@ import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
 import { useAuth } from '@hooks/auth'
 import { IUser } from '@dtos/IUser'
 import { useTheme } from 'styled-components/native'
+import Fundo from '@assets/fundo2.svg'
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
+import { Svg, SvgUri } from 'react-native-svg'
 
 const Login: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -83,11 +85,16 @@ const Login: React.FC = () => {
 
     return (
         <Container>
-            <ImageContainer>
-                <CloseButton onPress={handleGoBack}>
-                    <CloseIcon name="arrow-left" />
-                </CloseButton>
-            </ImageContainer>
+            <Image
+                source={{
+                    uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnrTL1y1XyXlOXo3Oxtr4bcShFepY_Woz89751jgD2KZ-c6YCX',
+                }}
+                style={{ width: '100%', height: RFValue(250 + 20) }}
+            />
+
+            <CloseButton onPress={handleGoBack}>
+                <CloseIcon name="arrow-left" />
+            </CloseButton>
 
             <Content showsVerticalScrollIndicator={false}>
                 <Title>Login</Title>

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components/native'
 import { getTopInset } from 'rn-iphone-helper'
-import { RFValue } from 'react-native-responsive-fontsize'
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize'
 
 export const Container = styled.View`
     flex: 1;
@@ -49,9 +49,18 @@ export const ImageContainer = styled.View`
 
     justify-content: center;
     align-items: center;
+
+    border: 1px solid red;
+    background-image: url('@assets/fundo.png');
 `
 
 export const ImageContainerTitle = styled.Text`
+    position: absolute;
+    width: 55%;
+
+    right: ${RFValue(10)}px;
+    top: ${RFPercentage(45)}px;
+
     text-align: right;
 
     color: ${({ theme }) => theme.colors.text_dark};

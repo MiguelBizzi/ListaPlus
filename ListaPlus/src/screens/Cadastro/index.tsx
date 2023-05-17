@@ -26,6 +26,7 @@ import { useAuth } from '@hooks/auth'
 import { IUser } from '@dtos/IUser'
 import { useTheme } from 'styled-components/native'
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
+import { Image } from 'react-native'
 
 const Cadastro: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -94,12 +95,16 @@ const Cadastro: React.FC = () => {
 
     return (
         <Container>
-            <ImageContainer>
-                <CloseButton onPress={handleGoBack}>
-                    <CloseIcon name="arrow-left" />
-                </CloseButton>
-                {/* <Image /> */}
-            </ImageContainer>
+            <Image
+                source={{
+                    uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnrTL1y1XyXlOXo3Oxtr4bcShFepY_Woz89751jgD2KZ-c6YCX',
+                }}
+                style={{ width: '100%', height: RFValue(250 + 20) }}
+            />
+
+            <CloseButton onPress={handleGoBack}>
+                <CloseIcon name="arrow-left" />
+            </CloseButton>
 
             <ScrollViewComponent>
                 <Content>
