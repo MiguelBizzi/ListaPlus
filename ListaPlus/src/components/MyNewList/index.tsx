@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
-import { ScrollView, View } from 'react-native'
+import { FlatList, ScrollView, View } from 'react-native'
 
-import { Container, Header, Title, Icon } from './styles'
+import { Container, Header, Title, Icon, EmptyText } from './styles'
 import MyNewListCard from './MyNewListCard'
 import { RFValue } from 'react-native-responsive-fontsize'
 
-const MyNewList: React.FC = () => {
+interface Props {
+    alimentos: any[]
+    handleMark: (id: number, isMarked: boolean) => void
+}
+
+const MyNewList: React.FC<Props> = ({ alimentos, handleMark }) => {
     const [showContent, setShowContent] = useState<boolean>(true)
 
     return (
@@ -14,23 +19,21 @@ const MyNewList: React.FC = () => {
                 activeOpacity={0.7}
                 onPress={() => setShowContent((prev) => !prev)}
             >
-                <Title>Minha lista</Title>
+                <Title>Minha nova lista</Title>
                 <Icon name={showContent ? 'arrow-down' : 'arrow-right'} />
             </Header>
-            <View
+            <FlatList
                 style={{
                     display: showContent ? 'flex' : 'none',
                     marginBottom: RFValue(44),
                 }}
-            >
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-                <MyNewListCard />
-            </View>
+                data={alimentos}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <MyNewListCard onPress={handleMark} item={item} />
+                )}
+                ListEmptyComponent={<EmptyText>Lista vazia!</EmptyText>}
+            />
         </Container>
     )
 }

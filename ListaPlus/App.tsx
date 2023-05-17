@@ -14,6 +14,7 @@ import Loading from '@components/Loading'
 import { AuthProvider } from '@hooks/auth'
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
 import { Routes } from '@routes/index'
+import { ListProvider } from '@hooks/list'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -26,12 +27,14 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <AuthProvider>
-                <StatusBar
-                    barStyle="dark-content"
-                    backgroundColor="transparent"
-                    translucent
-                />
-                {fontsLoaded ? <Routes /> : <Loading />}
+                <ListProvider>
+                    <StatusBar
+                        barStyle="dark-content"
+                        backgroundColor="transparent"
+                        translucent
+                    />
+                    {fontsLoaded ? <Routes /> : <Loading />}
+                </ListProvider>
             </AuthProvider>
             <Toast />
         </ThemeProvider>

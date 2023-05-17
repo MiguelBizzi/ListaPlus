@@ -10,7 +10,7 @@ export const Container = styled.View`
 `
 
 export const Header = styled.View`
-    padding: ${getTopInset() + RFValue(10)}px 0 ${RFValue(24)}px;
+    padding: ${getTopInset() + RFValue(10)}px 0 ${RFValue(8)}px;
 
     border-bottom-left-radius: ${RFValue(25)}px;
     border-bottom-right-radius: ${RFValue(25)}px;
@@ -80,7 +80,7 @@ export const SuggestTitle = styled.Text`
     color: ${({ theme }) => theme.colors.text_light};
 `
 
-export const Main = styled.ScrollView`
+export const Main = styled.View`
     flex: 1;
     padding: ${RFValue(24)}px;
 `
@@ -94,11 +94,17 @@ export const Footer = styled.View`
     background-color: ${({ theme }) => theme.colors.shape};
 `
 
-export const CartCircle = styled.View`
-    width: ${RFValue(50)}px;
-    height: ${RFValue(50)}px;
+export const FooterInfo = styled.View`
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+`
 
-    border-radius: ${RFValue(50 / 2)}px;
+export const CartCircle = styled.View`
+    width: ${RFValue(35)}px;
+    height: ${RFValue(35)}px;
+
+    border-radius: ${RFValue(35 / 2)}px;
 
     justify-content: center;
     align-items: center;
@@ -109,7 +115,7 @@ export const CartCircle = styled.View`
 export const CartIcon = styled(Feather)`
     margin-left: -${RFValue(2)}px;
 
-    font-size: ${RFValue(22)}px;
+    font-size: ${RFValue(20)}px;
     color: ${({ theme }) => theme.colors.shape};
 `
 
@@ -119,4 +125,28 @@ export const FooterText = styled.Text`
     font-size: ${RFValue(14)}px;
     font-family: ${({ theme }) => theme.fonts.regular};
     color: ${({ theme }) => theme.colors.text_dark};
+`
+
+export const FooterButton = styled.TouchableOpacity`
+    padding: ${RFValue(5)}px ${RFValue(16)}px;
+
+    border-radius: ${RFValue(10)}px;
+
+    flex-direction: row;
+    align-items: center;
+
+    background-color: ${({ theme }) => theme.colors.primary_light};
+`
+
+export const FooterButtonText = styled.Text`
+    font-size: ${RFValue(14)}px;
+    font-family: ${({ theme }) => theme.fonts.bold};
+    color: ${({ theme }) => theme.colors.text_light};
+`
+
+export const FooterButtonIcon = styled(Feather)`
+    margin-left: ${RFValue(3)}px;
+
+    font-size: ${RFValue(16)}px;
+    color: ${({ theme }) => theme.colors.shape};
 `

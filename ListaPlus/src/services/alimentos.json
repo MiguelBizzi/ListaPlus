@@ -1,0 +1,232 @@
+[
+    {
+        "id": 1,
+        "nome": "Abacate",
+        "imagem": "https://example.com/abacate.jpg"
+    },
+    {
+        "id": 2,
+        "nome": "Abacaxi",
+        "imagem": "https://example.com/abacaxi.jpg"
+    },
+    {
+        "id": 3,
+        "nome": "Açaí",
+        "imagem": "https://example.com/acai.jpg"
+    },
+    {
+        "id": 4,
+        "nome": "Acerola",
+        "imagem": "https://example.com/acerola.jpg"
+    },
+    {
+        "id": 5,
+        "nome": "Alface",
+        "imagem": "https://example.com/alface.jpg"
+    },
+    {
+        "id": 6,
+        "nome": "Alho",
+        "imagem": "https://example.com/alho.jpg"
+    },
+    {
+        "id": 7,
+        "nome": "Amendoim",
+        "imagem": "https://example.com/amendoim.jpg"
+    },
+    {
+        "id": 8,
+        "nome": "Arroz",
+        "imagem": "https://example.com/arroz.jpg"
+    },
+    {
+        "id": 9,
+        "nome": "Banana",
+        "imagem": "https://example.com/banana.jpg"
+    },
+    {
+        "id": 10,
+        "nome": "Batata",
+        "imagem": "https://example.com/batata.jpg"
+    },
+    {
+        "id": 11,
+        "nome": "Beterraba",
+        "imagem": "https://example.com/beterraba.jpg"
+    },
+    {
+        "id": 12,
+        "nome": "Caju",
+        "imagem": "https://example.com/caju.jpg"
+    },
+    {
+        "id": 13,
+        "nome": "Cenoura",
+        "imagem": "https://example.com/cenoura.jpg"
+    },
+    {
+        "id": 14,
+        "nome": "Coco",
+        "imagem": "https://example.com/coco.jpg"
+    },
+    {
+        "id": 15,
+        "nome": "Couve",
+        "imagem": "https://example.com/couve.jpg"
+    },
+    {
+        "id": 16,
+        "nome": "Laranja",
+        "imagem": "https://example.com/laranja.jpg"
+    },
+    {
+        "id": 17,
+        "nome": "Maçã",
+        "imagem": "https://example.com/maca.jpg"
+    },
+    {
+        "id": 18,
+        "nome": "Manga",
+        "imagem": "https://example.com/manga.jpg"
+    },
+    {
+        "id": 19,
+        "nome": "Melancia",
+        "imagem": "https://example.com/melancia.jpg"
+    },
+    {
+        "id": 20,
+        "nome": "Melão",
+        "imagem": "https://example.com/melao.jpg"
+    },
+    {
+        "id": 21,
+        "nome": "Milho",
+        "imagem": "https://example.com/milho.jpg"
+    },
+    {
+        "id": 22,
+        "nome": "Pêra",
+        "imagem": "https://example.com/pera.jpg"
+    },
+    {
+        "id": 23,
+        "nome": "Tomate",
+        "imagem": "https://example.com/tomate.jpg"
+    },
+    {
+        "id": 24,
+        "nome": "Uva",
+        "imagem": "https://example.com/uva.jpg"
+    },
+    {
+        "id": 25,
+        "nome": "Açúcar",
+        "imagem": "https://i.imgur.com/8bwVWhf.jpg"
+    },
+    {
+        "id": 26,
+        "nome": "Farinha de trigo",
+        "imagem": "https://i.imgur.com/0TXfzB8.jpg"
+    },
+    {
+        "id": 27,
+        "nome": "Óleo de soja",
+        "imagem": "https://i.imgur.com/lbF3xVv.jpg"
+    },
+    {
+        "id": 28,
+        "nome": "Sal",
+        "imagem": "https://i.imgur.com/55VUeX9.jpg"
+    },
+    {
+        "id": 29,
+        "nome": "Café",
+        "imagem": "https://i.imgur.com/cnUdZJO.jpg"
+    },
+    {
+        "id": 30,
+        "nome": "Leite",
+        "imagem": "https://i.imgur.com/Qkia5Am.jpg"
+    },
+    {
+        "id": 31,
+        "nome": "Manteiga",
+        "imagem": "https://i.imgur.com/KvF2Jr1.jpg"
+    },
+    {
+        "id": 32,
+        "nome": "Queijo",
+        "imagem": "https://i.imgur.com/yN6bvgm.jpg"
+    },
+    {
+        "id": 33,
+        "nome": "Presunto",
+        "imagem": "https://i.imgur.com/COl82Zt.jpg"
+    },
+    {
+        "id": 34,
+        "nome": "Ovos",
+        "imagem": "https://i.imgur.com/7Rb8MQv.jpg"
+    },
+    {
+        "id": 35,
+        "nome": "Iogurte",
+        "imagem": "https://i.imgur.com/XLlYfxF.jpg"
+    },
+    {
+        "id": 36,
+        "nome": "Cereal",
+        "imagem": "https://i.imgur.com/NM72wqu.jpg"
+    },
+    {
+        "id": 37,
+        "nome": "Pão de forma",
+        "imagem": "https://i.imgur.com/jHto9OQ.jpg"
+    },
+    {
+        "id": 38,
+        "nome": "Pão francês",
+        "imagem": "https://i.imgur.com/Im8lLsz.jpg"
+    },
+    {
+        "id": 39,
+        "nome": "Biscoito",
+        "imagem": "https://i.imgur.com/KzZ8uJ8.jpg"
+    },
+    {
+        "id": 40,
+        "nome": "Refrigerante",
+        "imagem": "https://i.imgur.com/4pr5B6d.jpg"
+    },
+    {
+        "id": 41,
+        "nome": "Suco de caixinha",
+        "imagem": "https://i.imgur.com/4K7G2xS.jpg"
+    },
+    {
+        "id": 43,
+        "nome": "Água mineral",
+        "imagem": "https://i.imgur.com/JJvOw7q.jpg"
+    },
+    {
+        "id": 44,
+        "nome": "Cerveja",
+        "imagem": "https://i.imgur.com/sT20wtB.jpg"
+    },
+    {
+        "id": 45,
+        "nome": "Vinho",
+        "imagem": "https://i.imgur.com/9McVWeH.jpg"
+    },
+    {
+        "id": 46,
+        "nome": "Cachaça",
+        "imagem": "https://i.imgur.com/FZhfvVq.jpg"
+    },
+    {
+        "id": 47,
+        "nome": "Whisky",
+        "imagem": "https://i.imgur.com/xKmXO.jpg"
+    }
+]
