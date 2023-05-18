@@ -206,7 +206,7 @@ const CriaLista: React.FC = () => {
                         <CartIcon name="shopping-cart" />
                     </CartCircle>
                     <FooterText>
-                        Total: {selectedAlimento.length} items
+                        Total: {selectedAlimento.length} itens
                     </FooterText>
                 </FooterInfo>
                 <FooterButton onPress={handleSubmitList} activeOpacity={0.6}>
