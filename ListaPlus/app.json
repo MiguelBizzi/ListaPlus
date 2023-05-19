@@ -1,15 +1,17 @@
 {
-  "expo": {
-    "name": "ListaPlus",
-    "slug": "ListaPlus",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "d6b72bb3-5a79-41e7-8704-40c91b74ccfc"
-      }
+    "expo": {
+        "name": "ListaPlus",
+        "slug": "ListaPlus",
+        "version": "1.0.0",
+        "assetBundlePatterns": ["**/*"],
+        "splash": {
+            "image": "./src/assets/splash.png",
+            "backgroundColor": "#f3f3f3"
+        },
+        "extra": {
+            "eas": {
+                "projectId": "d6b72bb3-5a79-41e7-8704-40c91b74ccfc"
+            }
+        }
     }
-  }
 }
