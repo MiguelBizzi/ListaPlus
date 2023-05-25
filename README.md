@@ -1,2 +1,3 @@
 # ListaPlus
-Aplicativo de lista de compras 
+Aplicativo simples de lista de compras, feito com React-native com TypeScript
+Projeto freelance.
